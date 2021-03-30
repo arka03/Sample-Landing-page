@@ -1,0 +1,463 @@
+@import 'navbar';
+
+body {
+  font-family: sans-serif;
+}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+
+}
+img {
+  width:100%;
+  height:auto;
+}
+
+//hero section//
+.hero{
+  background: url('/src/images/hero.jpg');
+  overflow: hidden;
+  display: block;
+  height: 90vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+
+  @include tablet{
+    grid-template-columns: 1fr;
+    height: 100%;
+  }
+  
+  &_title{
+    margin-top: 180px;
+    padding: 0px 300px 0px 300px;
+    color:$white;
+    float: none;    
+    display: block;    
+    text-align: center;    
+    width: 100%;
+    max-width: none;
+
+    @include tablet{
+      margin-top: 111px;
+      padding: 0px;
+    }
+  }
+
+  &_container {
+    display: grid;
+    color:$white;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 50px 200px 15px 200px;
+    align-items: center;
+    grid-column-gap: 10px;
+    justify-items: center;
+    max-width: 100%;
+
+    @include tablet{
+      grid-template-columns: 1fr;
+      grid-row-gap: 20px;
+      height: 100%;
+      justify-items: normal;
+      padding: 50px 15px 30px 15px;
+    }
+
+    &-box{
+      display: grid;
+      border: 1px solid;
+      border-color: $grey;
+      text-align: center;
+      padding:72px;
+      grid-template-columns: 1fr;
+
+      @include tablet{
+        text-align: left;
+        grid-template-columns: 1fr 3fr;
+        padding: 20px 12px 0px 20px;
+        grid-row-gap: 1px;
+        vertical-align: center;
+      }
+
+    &-icon{
+      font-size: 3rem ;
+      color: $light;
+      padding-bottom:10px;
+      }
+    &-text{
+      font-size: 22px;
+      margin-top: 10px;
+      
+      }
+      
+    }
+
+  }
+}
+
+//about section//
+
+.about{
+  background-color: $white;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  &_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 50px 70px 10px 70px;
+    grid-column-gap: 40px;
+    max-width: 100%;
+
+    @include tablet{
+      grid-template-columns: 1fr;
+      grid-row-gap: 20px;
+      justify-items: normal;
+      padding: 1px 15px 30px 15px;
+    }
+
+    &-left{
+      display: flexbox;
+      border-color: $grey;
+      text-align: left;
+      margin-top: 40px;
+
+      @include mobile{
+        padding:none; 
+      }
+
+      @include tablet{
+        text-align: left;
+        padding: 5px;
+        grid-row-gap: 1px;
+        vertical-align: center;
+      }
+      
+      
+    }
+
+    &-left h1{
+      color: rgb(34, 34, 34);
+      padding-bottom: 20px;
+
+    }
+
+    &-left p{
+      color: $dark;
+    }
+
+    &-right {
+      display: flexbox;
+
+      @include tablet{
+        padding: 20px 12px 0px 20px;
+        grid-row-gap: 1px;
+        vertical-align: center;
+      }
+
+    }
+
+  }
+}
+
+//testimonials section//
+.testimonials{
+  background: #e7e7e7;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 2rem;
+  padding-right: 4rem;
+  padding-left: 4rem;
+  padding-bottom: 4rem;
+
+  @include tablet {
+    padding-top: 5px;
+    padding-right: 10rem;
+    padding-left: 10rem;
+  }
+  @include mobile{
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  @include mobile-mini{
+    padding-right: 0rem;
+    padding-left: 0rem;
+  }
+
+  &_title{
+    color:$dark;
+    display: block;    
+    text-align: center;    
+
+    @include tablet{
+      margin-top: 60px;
+      padding: 0px;
+    }
+  }
+  &_container{
+    display: grid;
+    color:$white;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap:40px;
+
+    @include tablet{
+      grid-template-columns: 1fr;
+      justify-items: normal;
+      padding-bottom: 20px;
+    }
+    &-box{
+      background-color: $white;
+      color: #fff;
+      border-radius: 15px;
+
+      &-content{
+        color: $dark
+      }
+      &-content i{
+        color: $light;
+      }
+      
+    }
+    &-box-bottom{
+      position: relative;
+      margin: 3em;
+      padding: 1em;
+      box-sizing: border-box;
+      box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.4);
+
+      @include tablet {
+        padding:10px;
+      }
+    }
+
+    &-box-bottom::after{
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      margin-left: -0.5em;
+      bottom: -2em;
+      left: 20%;
+      box-sizing: border-box;
+      border: 1em solid black;
+      border-color: transparent transparent #fff #fff;
+      transform-origin: 0 0;
+      transform: rotate(-45deg);
+      box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.4);
+    }
+ }
+}
+
+.testimonial-ring{
+  height:60px;
+  width: 60px;
+  border-radius: 50px;
+  box-shadow: 0px 3px 5px 0 rgba(0, 0, 0, 0.4);
+}
+
+.tbox{
+  display:grid;
+  grid-template-columns: 1fr;
+
+ figure{
+      margin-left: 90px;
+
+      @include tablet {
+       margin-left: 100px
+      }
+      @include mobile{
+        margin-left: 90px
+      }
+      @include mobile-mini{
+        margin-left: 80px
+      }
+      
+  }
+
+  figcaption{
+    color: $dark;
+  }
+}
+.client-name{
+  font-weight: bold;
+}
+.hide{
+  @include tablet{
+    display: none;
+  }
+}
+
+//form//
+.form {
+  background: url('/src/images/form.jpg');
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+
+  &_title{
+    padding: 60px 300px 0px 300px;
+    color:$white;
+    float: none;    
+    display: block;    
+    text-align: center;    
+    width: 100%;
+    max-width: none;
+
+    @include tablet{
+      padding: 30px 20px 0 20px;
+    }
+
+    h1{
+      font-size: 2.5rem;
+
+      @include mobile{
+        font-size: 1.7rem;
+      }
+
+      @include mobile-mini{
+        font-size: 1.3rem;
+      }
+    }
+    p{
+      font-size: 1.5rem;
+
+      @include mobile{
+        font-size: 1rem;
+      }
+
+      @include mobile-mini{
+        font-size: 0.8rem;
+      }
+    }
+  }
+  &-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 0.7fr;
+    grid-template-areas:
+    "name email phn"
+    "textarea textarea textarea"
+    "button button button"
+    ;
+    padding: 50px 200px 50px 200px;
+    align-items: center;
+    grid-column-gap: 10px;
+    justify-items: center;
+    max-width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
+    'Helvetica Neue', sans-serif;
+
+    @include tablet{
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.5fr 0.5fr 0.5fr 1fr 0.5fr;
+      grid-template-areas: 
+      "name"
+      "email"
+      "phn"
+      "textarea"
+      "button"
+      ;
+      padding: 50px 30px;
+    }
+
+    @include mobile-mini{
+      padding: 30px 20px;
+    }
+  }
+  &-container button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+  }
+
+  
+}
+.fname{
+  grid-area: name;
+  width:100%;
+  height:60%;
+  padding: 10px;
+  border-radius: 5px;
+  border: transparent;
+  
+  @include tablet{
+    height: 60%;
+  }
+}
+.email{
+  grid-area: email;
+  width:100%;
+  height:60%;
+  padding: 10px;
+  border-radius: 5px;
+  border: transparent;
+
+  @include tablet{
+    height: 60%;
+  }
+}
+.phone{
+  grid-area: phn;
+  width:100%;
+  height:60%;
+  padding: 10px;
+  border-radius: 5px;
+  border: transparent;
+
+  @include tablet{
+    height: 60%;
+  }
+}
+.textarea{
+  grid-area: textarea;
+  width:100%;
+  height:100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: transparent;
+
+  @include tablet{
+    height: 80%;
+  }
+}
+.form-button{
+  grid-area: button;
+  width:20%;
+  height:50%;
+  padding: 10px;
+  border: transparent;
+  border-radius: 30px;
+  background-color: $light;
+  color:white;
+  font-weight: bold;
+
+  @include mobile{
+    height:45%;
+    width: 50%
+  }
+}
+//footer//
+.footer{
+  background: #171513;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: $grey;
+  padding: 30px 20px;
+
+  @include tablet{
+    grid-template-columns: 1fr;
+    text-align: center;
+    grid-gap: 15px;
+  }
+}
+
+.social{
+  text-align:right;
+  @include tablet{
+    text-align: center;
+  }
+}
+
+  
